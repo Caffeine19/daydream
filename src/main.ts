@@ -15,7 +15,6 @@ app.use(router)
 
 app.mount('#app')
 
-console.log(import.meta.env)
 inject({
   mode: import.meta.env.DEV ? 'development' : 'production'
 })
