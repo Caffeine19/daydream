@@ -98,6 +98,7 @@ export const useIncomeStore = defineStore('income', () => {
     updateIncomeItemTimeTag,
     deleteIncomeItem,
     createIncomeItem,
-    duplicateIncomeItem
+    duplicateIncomeItem,
+    sortIncomeListByTimeTag
   }
 })
