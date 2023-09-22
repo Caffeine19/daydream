@@ -39,7 +39,7 @@ defineEmits<{ select: [id: number] }>()
     <div
       ref="target"
       v-if="showTimeTagMenu"
-      class="absolute top-[120%] left-0 z-10 rounded-md bg-neutral-100 shadow-2xl shadow-neutral-900/10"
+      class="absolute top-[120%] left-0 z-10 rounded-md bg-zinc-100 shadow-2xl shadow-zinc-900/10"
     >
       <ul class="p-2 space-y-2">
         <li

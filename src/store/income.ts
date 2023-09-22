@@ -49,8 +49,6 @@ export const useIncomeStore = defineStore('income', () => {
   const updateIncomeItemTimeTag = (id: number, newVal: number) => {
     const index = incomeList.value.findIndex((d) => d.id === id)
     incomeList.value[index].timeTagId = newVal
-
-    sortIncomeListByTimeTag()
   }
 
   const timeTagStore = useTimeTagStore()
@@ -71,7 +69,7 @@ export const useIncomeStore = defineStore('income', () => {
   const createIncomeItem = (prevId: number) => {
     const index = incomeList.value.findIndex((d) => d.id === prevId)
 
-    const blankItem = {
+    const blankItem: Income = {
       name: '',
       value: 0,
       num: 1,
@@ -79,6 +77,16 @@ export const useIncomeStore = defineStore('income', () => {
       id: Math.floor(Math.random() * 1000)
     }
     incomeList.value.splice(index, 0, blankItem)
+  }
+
+  const duplicateIncomeItem = (targeId: Income['id']) => {
+    const index = incomeList.value.findIndex((d) => d.id === targeId)
+    const { id, ...rest } = incomeList.value[index]
+    const generatedIncomeItem = {
+      id: Math.floor(Math.random() * 1000),
+      ...rest
+    }
+    incomeList.value.splice(index, 0, generatedIncomeItem)
   }
 
   return {
@@ -89,6 +97,7 @@ export const useIncomeStore = defineStore('income', () => {
     updateIncomeItemName,
     updateIncomeItemTimeTag,
     deleteIncomeItem,
-    createIncomeItem
+    createIncomeItem,
+    duplicateIncomeItem
   }
 })
