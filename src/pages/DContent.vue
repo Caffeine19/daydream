@@ -22,7 +22,9 @@ const { timeTagList } = storeToRefs(timeTagStore)
 const { accumulatedAssetList, incomeList } = storeToRefs(incomeStore)
 
 const el = ref<HTMLElement | null>(null)
-useSortable(el, incomeList)
+const { option } = useSortable(el, incomeList, {
+  handle: '.accumulated-asset'
+})
 </script>
 
 <template>

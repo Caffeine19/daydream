@@ -11,7 +11,7 @@ const incomeStore = useIncomeStore()
 </script>
 <template>
   <div
-    class="p-1.5 w-auto md:w-fit space-y-1.5 rounded-md group/edit border border-zinc-100 bg-zinc-50 md:col-start-7 col-span-12 col-start-1 lg:col-start-8 lg:col-span-5 md:col-span-5 my-2 md:my-0"
+    class="edit-panel p-1.5 w-auto md:w-fit space-y-1.5 rounded-md group/edit border border-zinc-100 bg-zinc-50 md:col-start-7 col-span-12 col-start-1 lg:col-start-8 lg:col-span-5 md:col-span-5 my-2 md:my-0"
   >
     <div class="flex justify-between items-center">
       <input

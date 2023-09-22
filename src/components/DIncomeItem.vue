@@ -19,7 +19,7 @@ const incomeStore = useIncomeStore()
     ></DTimeTag>
 
     <div
-      class="rounded-full px-2 py-1 border border-zinc-200 flex items-center space-x-1 md:col-start-4 col-start-7 col-span-6 md:col-span-3 lg:col-start-6 lg:col-span-2 justify-self-end md:justify-self-center"
+      class="accumulated-asset rounded-full px-2 py-1 border border-zinc-200 flex items-center space-x-1 md:col-start-4 col-start-7 col-span-6 md:col-span-3 lg:col-start-6 lg:col-span-2 justify-self-end md:justify-self-center"
     >
       <CurrencyYenIcon class="w-4 h-4 text-zinc-900"></CurrencyYenIcon>
       <p class="text-zinc-900 text-base font-medium">{{ accumulatedAsset }}</p>
