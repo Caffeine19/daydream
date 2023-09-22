@@ -33,7 +33,9 @@ const incomeStore = useIncomeStore()
     </div>
 
     <div class="flex items-center space-x-1">
-      <div class="rounded-lg border border-neutral-300 px-2 py-1 text-neutral-600">
+      <div
+        class="rounded-lg border border-neutral-300 px-2 py-1 text-neutral-600 self-stretch flex items-center"
+      >
         <input
           type="number"
           class="text-neutral-600 w-20 bg-transparent font-normal text-sm outline-none"
@@ -48,7 +50,9 @@ const incomeStore = useIncomeStore()
         />
       </div>
       <XMarkIcon class="text-neutral-300 w-4 h-4"></XMarkIcon>
-      <div class="text-neural-400 px-3 py-2 rounded-lg border border-neutral-300">
+      <div
+        class="text-neural-400 px-3 py-2 rounded-lg border border-neutral-300 self-stretch flex items-center"
+      >
         <input
           type="number"
           class="text-neutral-600 w-10 font-normal bg-transparent text-base outline-none"
@@ -63,7 +67,9 @@ const incomeStore = useIncomeStore()
         />
       </div>
       <Bars2Icon class="text-neutral-300 w-4 h-4"></Bars2Icon>
-      <div class="text-neural-400 px-2 py-1 rounded-lg border border-neutral-300">
+      <div
+        class="text-neural-400 px-2 py-1 rounded-lg border border-neutral-300 self-stretch flex items-center"
+      >
         <input
           type="number"
           disabled

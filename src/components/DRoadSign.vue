@@ -29,7 +29,7 @@ defineProps<RoadSign>()
       :class="backgroundColor + ' ' + textColor"
     >
       <slot></slot>
-      <p class="text-base font-medium">Start</p>
+      <p class="text-base font-medium">{{ label }}</p>
     </div>
   </div>
 </template>
