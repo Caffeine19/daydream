@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ArrowsUpDownIcon, MoonIcon, SunIcon } from '@heroicons/vue/24/outline'
+import { storeToRefs } from 'pinia'
 
-import { useDark, useToggle } from '@vueuse/core'
+import { ArrowsUpDownIcon, MoonIcon, SunIcon, ArrowUpTrayIcon } from '@heroicons/vue/24/outline'
+
+import { useClipboard, useDark, useToggle } from '@vueuse/core'
 
 import { useIncomeStore } from '@/store/income'
 
@@ -9,6 +11,9 @@ const incomeStore = useIncomeStore()
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+
+const { incomeList } = storeToRefs(incomeStore)
+const { copy } = useClipboard()
 </script>
 <template>
   <div
@@ -34,6 +39,13 @@ const toggleDark = useToggle(isDark)
         <SunIcon v-else class="w-5 h-5"></SunIcon>
 
         <p>{{ isDark ? 'Dark' : 'Light' }}</p>
+      </button>
+      <button
+        @click="() => copy(JSON.stringify(incomeList))"
+        class="flex items-center space-x-1 text-zinc-600 hover:bg-zinc-200 transition-colors px-2 py-1 rounded-md dark:text-zinc-300 dark:hover:bg-zinc-800"
+      >
+        <ArrowUpTrayIcon class="w-5 h-5"></ArrowUpTrayIcon>
+        <p>Copy</p>
       </button>
     </div>
     <div class="col-span-3"></div>
