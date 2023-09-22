@@ -1,6 +1,8 @@
 import { defineStore, storeToRefs } from 'pinia'
 
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
+
+import { useStorage, type RemovableRef } from '@vueuse/core/'
 
 import { useTimeTagStore } from './timeTag'
 
@@ -18,7 +20,7 @@ export interface Income {
 }
 
 export const useIncomeStore = defineStore('income', () => {
-  const incomeList = ref<Income[]>(mockIncomeList)
+  const incomeList: RemovableRef<Income[]> = useStorage<Income[]>('income-list', mockIncomeList)
 
   const accumulatedAssetList = computed(() => {
     const newVal: number[] = []
