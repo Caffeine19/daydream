@@ -11,11 +11,11 @@ const incomeStore = useIncomeStore()
 </script>
 <template>
   <div
-    class="edit-panel p-1.5 w-auto md:w-fit space-y-1.5 rounded-md group/edit border border-zinc-100 bg-zinc-50 md:col-start-7 col-span-12 col-start-1 lg:col-start-8 lg:col-span-5 md:col-span-5 my-2 md:my-0"
+    class="edit-panel p-1.5 w-auto md:w-fit space-y-1.5 rounded-md group/edit border dark:border-zinc-800 dark:bg-zinc-900 border-zinc-100 bg-zinc-50 md:col-start-7 col-span-12 col-start-1 lg:col-start-8 lg:col-span-5 md:col-span-5 my-2 md:my-0"
   >
     <div class="flex justify-between items-center">
       <input
-        class="text-base placeholder:text-zinc-300 font-medium text-zinc-600 outline-none bg-transparent"
+        class="text-base placeholder:text-zinc-300 font-medium text-zinc-600 outline-none bg-transparent dark:text-zinc-300 dark:placeholder:text-zinc-600"
         :value="name"
         placeholder="item name"
         @change="
@@ -29,7 +29,7 @@ const incomeStore = useIncomeStore()
     <div class="flex justify-between items-center space-x-1">
       <input
         type="number"
-        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600"
+        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600 dark:text-zinc-300 dark:border-zinc-600"
         :value="value"
         @change="
           (event) =>
@@ -43,7 +43,7 @@ const incomeStore = useIncomeStore()
       <XMarkIcon class="text-zinc-300 w-4 h-4"></XMarkIcon>
       <input
         type="number"
-        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600"
+        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600 dark:text-zinc-300 dark:border-zinc-600"
         :value="num"
         @change="
           (event) =>
@@ -51,11 +51,11 @@ const incomeStore = useIncomeStore()
         "
       />
 
-      <Bars2Icon class="text-zinc-300 w-4 h-4"></Bars2Icon>
+      <Bars2Icon class="text-zinc-300 w-4 h-4 dark:text-zinc-600"></Bars2Icon>
       <input
         type="number"
         disabled
-        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600"
+        class="p-1 w-20 bg-transparent font-normal text-sm outline-none rounded-md border border-zinc-300 text-zinc-600 dark:text-zinc-300 dark:border-zinc-600"
         :value="(num || 1) * value"
       />
     </div>

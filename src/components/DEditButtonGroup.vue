@@ -13,12 +13,14 @@ const incomeStore = useIncomeStore()
   <div class="space-x-0.5">
     <DEditButton :action="() => incomeStore.duplicateIncomeItem(id)">
       <DocumentDuplicateIcon
-        class="w-5 h-5 transition-colors text-zinc-400 group-hover/bt:text-zinc-600"
+        class="w-5 h-5 transition-colors text-zinc-400 dark:text-zinc-500 group-hover/bt:text-zinc-600 dark:group-hover/bt:text-zinc-300"
       >
       </DocumentDuplicateIcon
     ></DEditButton>
     <DEditButton :action="() => incomeStore.deleteIncomeItem(id)">
-      <TrashIcon class="w-5 h-5 transition-colors text-zinc-400 group-hover/bt:text-zinc-600">
+      <TrashIcon
+        class="w-5 h-5 transition-colors text-zinc-400 group-hover/bt:text-zinc-600 dark:text-zinc-500 dark:group-hover/bt:text-zinc-300"
+      >
       </TrashIcon>
     </DEditButton>
   </div>

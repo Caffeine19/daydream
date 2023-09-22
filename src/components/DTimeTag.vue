@@ -11,7 +11,8 @@ import { useTimeTagStore } from '@/store/timeTag'
 
 import { type TimeTag } from '@/types/timeTag'
 
-defineProps<TimeTag>()
+const props = defineProps<TimeTag>()
+console.log('🚀 ~ file: DTimeTag.vue:15 ~ props:', props)
 
 const target = ref(null)
 onClickOutside(target, () => (showTimeTagMenu.value = false))
@@ -39,7 +40,7 @@ defineEmits<{ select: [id: number] }>()
     <div
       ref="target"
       v-if="showTimeTagMenu"
-      class="absolute top-[120%] left-0 z-10 rounded-md bg-zinc-100 shadow-2xl shadow-zinc-900/10"
+      class="absolute top-[120%] left-0 z-10 rounded-md bg-zinc-100 dark:bg-zinc-900 shadow-2xl shadow-zinc-900/10 dark:shadow-zinc-600/10"
     >
       <ul class="p-2 space-y-2">
         <li
