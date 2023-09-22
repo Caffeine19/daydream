@@ -4,7 +4,7 @@ import DContent from '@/pages/DContent.vue'
 </script>
 
 <template>
-  <div class="w-screen h-screen overflow-hidden bg-white flex flex-col">
+  <div class="w-screen h-screen overflow-hidden bg-white flex flex-col dark:bg-zinc">
     <DHeader></DHeader>
     <DContent></DContent>
   </div>
