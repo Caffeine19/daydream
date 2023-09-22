@@ -2,7 +2,7 @@ import { defineStore, storeToRefs } from 'pinia'
 
 import { computed } from 'vue'
 
-import { useStorage, type RemovableRef } from '@vueuse/core/'
+import { useStorage, type RemovableRef } from '@vueuse/core'
 
 import { useTimeTagStore } from './timeTag'
 

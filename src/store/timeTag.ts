@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import { useStorage, type RemovableRef } from '@vueuse/core/'
+import { useStorage, type RemovableRef } from '@vueuse/core'
 
 import { mockTimeTagList } from './mockData'
 
