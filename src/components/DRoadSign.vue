@@ -25,7 +25,7 @@ defineProps<RoadSign>()
 <template>
   <div class="grid grid-cols-12">
     <div
-      class="col-span-3 col-start-4 lg:col-start-6 w-fit lg:col-span-2 justify-self-center px-2 py-1 rounded-full flex items-center space-x-1"
+      class="col-start-1 col-span-12 md:col-span-3 md:col-start-4 lg:col-start-6 w-fit lg:col-span-2 justify-self-center px-2 py-1 rounded-full flex items-center space-x-1"
       :class="backgroundColor + ' ' + textColor"
     >
       <slot></slot>

@@ -35,7 +35,7 @@ useSortable(el, incomeList)
           <div v-if="index !== 0" class="grid-cols-12 grid">
             <DConnector
               :prevId="income.id"
-              class="place-self-center col-span-3 col-start-4 lg:col-start-6 lg:col-span-2"
+              class="place-self-center col-start-1 col-span-12 md:col-span-3 md:col-start-4 lg:col-start-6 lg:col-span-2"
             ></DConnector>
           </div>
           <DIncomeItem

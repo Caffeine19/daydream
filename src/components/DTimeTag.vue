@@ -25,7 +25,7 @@ defineEmits<{ select: [id: number] }>()
 </script>
 <template>
   <div
-    class="relative flex items-center justify-self-end col-end-4 col-span-3 lg:col-end-6 lg:col-span-2 group"
+    class="relative flex items-center justify-self-start md:justify-self-end col-span-6 col-end-6 md:col-end-4 md:col-span-3 lg:col-end-6 lg:col-span-2 group"
   >
     <div
       class="rounded-md px-2 py-1 flex w-fit space-x-1 items-center"

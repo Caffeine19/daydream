@@ -9,7 +9,7 @@ const incomeStore = useIncomeStore()
   <div class="w-full p-2 bg-zinc-50 border-b border-zinc-100 grid grid-cols-12">
     <div class="flex items-center space-x-1 col-span-3">
       <img src="@/assets/img/rainbow.png" alt="rainbow" class="w-8 h-8" />
-      <p class="text-xl font-semibold text-zinc-900">Daydream</p>
+      <p class="text-xl font-semibold text-zinc-900 md:inline hidden">Daydream</p>
     </div>
     <div class="col-span-6 flex justify-center">
       <button
