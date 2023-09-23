@@ -28,7 +28,7 @@ useSortable(el, incomeList, {
 </script>
 
 <template>
-  <div class="container mx-auto h-full p-4 overflow-y-auto">
+  <div class="container mx-auto h-full m-4 overflow-y-auto custom-scrollbar">
     <div class="flex flex-col p-2 space-y-1">
       <DRoadSign v-bind="startRoadSign"><FlagIcon class="w-4 h-4" /></DRoadSign>
 

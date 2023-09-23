@@ -1,6 +1,6 @@
 import { defineStore, storeToRefs } from 'pinia'
 
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 import { useStorage, type RemovableRef } from '@vueuse/core'
 
@@ -79,6 +79,7 @@ export const useIncomeStore = defineStore('income', () => {
       id: Math.floor(Math.random() * 1000)
     }
     incomeList.value.splice(index, 0, blankItem)
+    highlightIncomeItem(blankItem.id)
   }
 
   const duplicateIncomeItem = (targeId: Income['id']) => {
@@ -89,6 +90,14 @@ export const useIncomeStore = defineStore('income', () => {
       ...rest
     }
     incomeList.value.splice(index, 0, generatedIncomeItem)
+    highlightIncomeItem(generatedIncomeItem.id)
+  }
+
+  const highlightedIncomeItem = ref<undefined | Income['id']>(undefined)
+  const highlightIncomeItem = (id: Income['id']) => {
+    highlightedIncomeItem.value = undefined
+    highlightedIncomeItem.value = id
+    setTimeout(() => (highlightedIncomeItem.value = undefined), 5000)
   }
 
   return {
@@ -101,6 +110,7 @@ export const useIncomeStore = defineStore('income', () => {
     deleteIncomeItem,
     createIncomeItem,
     duplicateIncomeItem,
-    sortIncomeListByTimeTag
+    sortIncomeListByTimeTag,
+    highlightedIncomeItem
   }
 })

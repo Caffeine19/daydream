@@ -1,6 +1,6 @@
 import type { Income } from './income'
 
-import { TagColorOption, type TimeTag } from '@/types/timeTag'
+import { type TimeTag } from '@/types/timeTag'
 
 const mockIncomeList_1: Income[] = [
   {
@@ -43,8 +43,8 @@ const mockIncomeList_1: Income[] = [
 export const mockIncomeList = mockIncomeList_1
 
 export const mockTimeTagList: TimeTag[] = [
-  { name: '2023-H1', color: TagColorOption.lime, id: 1 },
-  { name: '2023-H2', color: TagColorOption.sky, id: 2 },
-  { name: '2024-H1', color: TagColorOption.pink, id: 3 },
-  { name: '2024-H2', color: TagColorOption.orange, id: 4 }
+  { name: '2023-H1', color: 'lime', id: 1 },
+  { name: '2023-H2', color: 'sky', id: 2 },
+  { name: '2024-H1', color: 'pink', id: 3 },
+  { name: '2024-H2', color: 'orange', id: 4 }
 ]

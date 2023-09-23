@@ -9,7 +9,7 @@ import { ChevronDownIcon } from '@heroicons/vue/24/outline'
 
 import { useTimeTagStore } from '@/store/timeTag'
 
-import { type TimeTag } from '@/types/timeTag'
+import { TagColorOption, type TimeTag } from '@/types/timeTag'
 
 const props = defineProps<TimeTag>()
 console.log('🚀 ~ file: DTimeTag.vue:15 ~ props:', props)
@@ -30,7 +30,7 @@ defineEmits<{ select: [id: number] }>()
   >
     <div
       class="rounded-md px-2 py-1 flex w-fit space-x-1 items-center"
-      :class="color"
+      :class="TagColorOption[color].backgroundColor + ' ' + TagColorOption[color].textColor"
       @click="showTimeTagMenu = !showTimeTagMenu"
     >
       <p class="text-sm font-normal">{{ name }}</p>
@@ -46,7 +46,11 @@ defineEmits<{ select: [id: number] }>()
         <li
           v-for="timeTag in timeTagList"
           :key="timeTag.id"
-          :class="timeTag.color"
+          :class="
+            TagColorOption[timeTag.color].backgroundColor +
+            ' ' +
+            TagColorOption[timeTag.color].textColor
+          "
           class="rounded-md px-2 py-1 whitespace-nowrap"
           @click="
             () => {
