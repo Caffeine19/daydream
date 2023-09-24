@@ -5,7 +5,7 @@ import DContent from '@/pages/DContent.vue'
 
 <template>
   <div
-    class="w-[100dvw] h-[100dvh] overflow-hidden transition-colors bg-white dark:bg-[hsl(240,10%,7%)] flex flex-col"
+    class="w-[100dvw] h-[100dvh] overflow-hidden transition-colors bg-white dark:bg-zinc-930 flex flex-col"
   >
     <DHeader></DHeader>
     <DContent></DContent>

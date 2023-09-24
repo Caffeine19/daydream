@@ -46,7 +46,7 @@ const newTimeTagName = ref<string>()
     <Transition>
       <div
         v-if="showTimeTagMenu"
-        class="p-2 absolute top-[120%] left-0 z-10 space-y-2 rounded-md bg-zinc-100 dark:bg-zinc-900 shadow-2xl shadow-zinc-900/10 dark:shadow-zinc-600/10 flex flex-col"
+        class="p-2 absolute top-[120%] left-0 z-10 space-y-2 rounded-md bg-zinc-100 dark:bg-zinc-900 flex flex-col"
       >
         <DInput :value="newTimeTagName" placeholder="new time tag name"> </DInput>
         <ul class="space-y-2">

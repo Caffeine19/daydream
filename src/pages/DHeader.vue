@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import { storeToRefs } from 'pinia'
 
 import {
@@ -14,6 +16,7 @@ import { useClipboard, useDark, useToggle } from '@vueuse/core'
 import { useIncomeStore } from '@/store/income'
 
 import DAppButton from '@/components/DAppButton.vue'
+import DDialog from '@/components/DDialog.vue'
 
 const incomeStore = useIncomeStore()
 
@@ -22,6 +25,16 @@ const toggleDark = useToggle(isDark)
 
 const { incomeList } = storeToRefs(incomeStore)
 const { copy } = useClipboard()
+
+const jsonStr = ref<string>()
+
+const showDialog = ref(false)
+const onCancel = () => (showDialog.value = false)
+const onConfirm = () => {
+  if (jsonStr.value) incomeStore.importIncomeList(jsonStr.value)
+  showDialog.value = false
+}
+const onClickOutside = () => (showDialog.value = false)
 </script>
 <template>
   <div
@@ -43,9 +56,20 @@ const { copy } = useClipboard()
       <DAppButton label="Export" :action="() => copy(JSON.stringify(incomeList))">
         <ArrowUpTrayIcon class="w-5 h-5"></ArrowUpTrayIcon
       ></DAppButton>
-      <DAppButton label="Import" :action="() => copy(JSON.stringify(incomeList))">
-        <ArrowTopRightOnSquareIcon class="w-5 h-5"></ArrowTopRightOnSquareIcon
-      ></DAppButton>
+      <DAppButton label="Import" :action="() => (showDialog = true)">
+        <ArrowTopRightOnSquareIcon class="w-5 h-5"></ArrowTopRightOnSquareIcon>
+        <DDialog
+          @confirm="onConfirm"
+          @cancel="onCancel"
+          :showDialog="showDialog"
+          @clickOutside="onClickOutside"
+        >
+          <textarea
+            v-model="jsonStr"
+            class="rounded-md outline-none bg-zinc-900 text-zinc-300 text-base font-normal p-2 min-h-[20vh] custom-scrollbar min-w-[25rem]"
+          ></textarea>
+        </DDialog>
+      </DAppButton>
     </div>
   </div>
 </template>

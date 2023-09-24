@@ -100,6 +100,10 @@ export const useIncomeStore = defineStore('income', () => {
     setTimeout(() => (highlightedIncomeItem.value = undefined), 1000)
   }
 
+  const importIncomeList = (jsonStr: string) => {
+    const newVal = JSON.parse(jsonStr) as Income[]
+    incomeList.value = newVal
+  }
   return {
     incomeList,
     accumulatedAssetList,
@@ -111,6 +115,7 @@ export const useIncomeStore = defineStore('income', () => {
     createIncomeItem,
     duplicateIncomeItem,
     sortIncomeListByTimeTag,
-    highlightedIncomeItem
+    highlightedIncomeItem,
+    importIncomeList
   }
 })
