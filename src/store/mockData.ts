@@ -4,21 +4,21 @@ import { type TimeTag } from '@/types/timeTag'
 
 const mockIncomeList_1: Income[] = [
   {
-    name: 'deposit/存款',
+    name: '存款',
     value: 200000,
     num: 1,
     timeTagId: 1,
     id: 2
   },
   {
-    name: 'salary/工资',
+    name: '工资',
     value: 100,
     num: 3,
     timeTagId: 2,
     id: 7
   },
   {
-    name: 'year-end bonus/年终奖',
+    name: '年终奖',
     value: 200,
     timeTagId: 2,
     id: 12,

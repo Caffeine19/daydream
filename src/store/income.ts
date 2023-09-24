@@ -97,7 +97,7 @@ export const useIncomeStore = defineStore('income', () => {
   const highlightIncomeItem = (id: Income['id']) => {
     highlightedIncomeItem.value = undefined
     highlightedIncomeItem.value = id
-    setTimeout(() => (highlightedIncomeItem.value = undefined), 5000)
+    setTimeout(() => (highlightedIncomeItem.value = undefined), 1000)
   }
 
   return {
