@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 
-import { ArrowsUpDownIcon, MoonIcon, SunIcon, ArrowUpTrayIcon } from '@heroicons/vue/24/outline'
+import {
+  ArrowsUpDownIcon,
+  MoonIcon,
+  SunIcon,
+  ArrowUpTrayIcon,
+  ArrowTopRightOnSquareIcon
+} from '@heroicons/vue/24/outline'
 
 import { useClipboard, useDark, useToggle } from '@vueuse/core'
 
 import { useIncomeStore } from '@/store/income'
+
+import DAppButton from '@/components/DAppButton.vue'
 
 const incomeStore = useIncomeStore()
 
@@ -23,31 +31,21 @@ const { copy } = useClipboard()
       <img src="@/assets/img/rainbow.png" alt="rainbow" class="w-8 h-8" />
       <p class="text-xl font-semibold text-zinc-900 md:inline hidden dark:text-zinc-50">Daydream</p>
     </div>
-    <div class="col-span-6 flex justify-center space-x-1">
-      <button
-        @click="incomeStore.sortIncomeListByTimeTag"
-        class="flex items-center space-x-1 text-zinc-600 hover:bg-zinc-200 transition-colors px-2 py-1 rounded-md dark:text-zinc-300 dark:hover:bg-zinc-800"
-      >
+    <div class="col-span-6 flex justify-end lg:justify-center space-x-2 col-end-13 lg:col-end-10">
+      <DAppButton :action="incomeStore.sortIncomeListByTimeTag" label="Sort">
         <ArrowsUpDownIcon class="w-5 h-5"></ArrowsUpDownIcon>
-        <p>Sort</p>
-      </button>
-      <button
-        @click="() => toggleDark()"
-        class="flex items-center space-x-1 text-zinc-600 hover:bg-zinc-200 transition-colors px-2 py-1 rounded-md dark:text-zinc-300 dark:hover:bg-zinc-800"
-      >
+      </DAppButton>
+      <DAppButton :label="isDark ? 'Dark' : 'Light'" :action="toggleDark">
         <MoonIcon v-if="isDark" class="w-5 h-5"></MoonIcon>
         <SunIcon v-else class="w-5 h-5"></SunIcon>
+      </DAppButton>
 
-        <p>{{ isDark ? 'Dark' : 'Light' }}</p>
-      </button>
-      <button
-        @click="() => copy(JSON.stringify(incomeList))"
-        class="flex items-center space-x-1 text-zinc-600 hover:bg-zinc-200 transition-colors px-2 py-1 rounded-md dark:text-zinc-300 dark:hover:bg-zinc-800"
-      >
-        <ArrowUpTrayIcon class="w-5 h-5"></ArrowUpTrayIcon>
-        <p>Copy</p>
-      </button>
+      <DAppButton label="Export" :action="() => copy(JSON.stringify(incomeList))">
+        <ArrowUpTrayIcon class="w-5 h-5"></ArrowUpTrayIcon
+      ></DAppButton>
+      <DAppButton label="Import" :action="() => copy(JSON.stringify(incomeList))">
+        <ArrowTopRightOnSquareIcon class="w-5 h-5"></ArrowTopRightOnSquareIcon
+      ></DAppButton>
     </div>
-    <div class="col-span-3"></div>
   </div>
 </template>
