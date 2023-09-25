@@ -23,6 +23,12 @@ export const TagColorOption = {
     backgroundColor: 'bg-yellow-500/10 dark:bg-yellow-300/10',
     textColor: ' text-yellow-500 dark:text-yellow-300',
     borderColor: 'border-yellow-500 dark:border-yellow-300 '
+  },
+  //default value
+  zinc: {
+    backgroundColor: 'bg-zinc-500/10 dark:bg-zinc-300/10',
+    textColor: ' text-zinc-500 dark:text-zinc-300',
+    borderColor: 'border-zinc-500 dark:border-zinc-300 '
   }
 }
 

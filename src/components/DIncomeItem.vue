@@ -27,7 +27,7 @@ const { highlightedIncomeItem } = storeToRefs(incomeStore)
     ></DTimeTag>
 
     <div
-      class="accumulated-asset rounded-full px-2 py-1 border flex items-center space-x-1 md:col-start-4 col-start-7 col-span-6 md:col-span-3 lg:col-start-6 lg:col-span-2 justify-self-end md:justify-self-center transition-colors"
+      class="cursor-grabbing accumulated-asset rounded-full px-2 py-1 border flex items-center space-x-1 md:col-start-4 col-start-7 col-span-6 md:col-span-3 lg:col-start-6 lg:col-span-2 justify-self-end md:justify-self-center transition-colors"
       :class="
         highlightedIncomeItem === id
           ? TagColorOption[timeTag?.color || 'sky'].borderColor +

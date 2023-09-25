@@ -7,6 +7,7 @@ defineProps<{
 }>()
 defineEmits<{
   change: [newVal: HTMLInputElement['value']]
+  enter: [newVal: HTMLInputElement['value']]
 }>()
 </script>
 <template>
@@ -17,5 +18,6 @@ defineEmits<{
     :type="type"
     :disabled="disabled === undefined ? false : disabled"
     @change="(event) => $emit('change', (event.target as HTMLInputElement).value)"
+    @keyup.enter="(event) => $emit('enter', (event.target as HTMLInputElement).value)"
   />
 </template>
