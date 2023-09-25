@@ -29,7 +29,7 @@ useSortable(el, incomeList, {
 
 <template>
   <div class="container mx-auto h-full m-4 overflow-y-auto custom-scrollbar">
-    <div class="flex flex-col p-2 space-y-1">
+    <div class="flex flex-col py-2 md:px-2 px-6 space-y-1">
       <DRoadSign v-bind="startRoadSign"><FlagIcon class="w-4 h-4" /></DRoadSign>
 
       <div ref="el">
@@ -51,10 +51,7 @@ useSortable(el, incomeList, {
           ></DIncomeItem>
         </div>
       </div>
-
       <DRoadSign v-bind="toRoadSign"><MapPinIcon class="w-4 h-4" /></DRoadSign>
     </div>
   </div>
 </template>
-
-<style scoped></style>

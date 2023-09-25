@@ -43,7 +43,7 @@ const newTimeTagName = ref<string>()
       <p class="text-sm font-normal">{{ name }}</p>
       <ChevronDownIcon class="w-5 h-5"></ChevronDownIcon>
     </button>
-    <Transition>
+    <Transition name="fade">
       <div
         v-if="showTimeTagMenu"
         class="p-2 absolute top-[120%] left-0 z-10 space-y-2 rounded-md bg-zinc-50 border-zinc-100 dark:border-zinc-800 border dark:bg-zinc-900 flex flex-col"
@@ -83,3 +83,14 @@ const newTimeTagName = ref<string>()
     ></Transition>
   </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.16s ease-in;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
