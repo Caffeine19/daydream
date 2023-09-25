@@ -19,8 +19,13 @@ export const useTimeTagStore = defineStore('timeTag', () => {
     timeTagList.value.unshift(blankTimeTag)
   }
 
+  const deleteTimeTag = (id: TimeTag['id']) => {
+    timeTagList.value = timeTagList.value.filter((t) => t.id !== id)
+  }
+
   return {
     timeTagList,
-    createTimeTag
+    createTimeTag,
+    deleteTimeTag
   }
 })

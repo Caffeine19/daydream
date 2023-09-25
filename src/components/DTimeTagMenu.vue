@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 import { storeToRefs } from 'pinia'
 
-import { EllipsisVerticalIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { EllipsisHorizontalIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 import DInput from './DInput.vue'
 
@@ -42,6 +42,7 @@ const onEnter = (newVal: string) => {
           class="flex group items-center space-x-1"
         >
           <button
+            @click="() => timeTagStore.deleteTimeTag(timeTag.id)"
             class="rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors bg-transparent p-1.5"
           >
             <XMarkIcon
@@ -67,10 +68,10 @@ const onEnter = (newVal: string) => {
           <button
             class="rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors bg-transparent p-1.5"
           >
-            <EllipsisVerticalIcon
+            <EllipsisHorizontalIcon
               class="w-5 h-5 text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-400"
             >
-            </EllipsisVerticalIcon>
+            </EllipsisHorizontalIcon>
           </button>
         </li>
       </ul></div
