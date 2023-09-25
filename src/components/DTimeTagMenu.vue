@@ -54,7 +54,12 @@ const onCreateButtonClick = () => {
       </div>
 
       <ul class="space-y-2">
-        <DTimeTagMenuItem v-for="timeTag in timeTagList" :key="timeTag.id" :timeTag="timeTag">
+        <DTimeTagMenuItem
+          v-for="timeTag in timeTagList"
+          :key="timeTag.id"
+          :timeTag="timeTag"
+          @select="(timeTagId) => $emit('select', timeTagId)"
+        >
         </DTimeTagMenuItem>
       </ul>
     </div>
