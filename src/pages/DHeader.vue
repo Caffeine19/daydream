@@ -59,14 +59,15 @@ const onClickOutside = () => (showDialog.value = false)
       <DAppButton label="Import" :action="() => (showDialog = true)">
         <ArrowTopRightOnSquareIcon class="w-5 h-5"></ArrowTopRightOnSquareIcon>
         <DDialog
+          :showDialog="showDialog"
+          label="Import"
           @confirm="onConfirm"
           @cancel="onCancel"
-          :showDialog="showDialog"
           @clickOutside="onClickOutside"
         >
           <textarea
             v-model="jsonStr"
-            class="rounded-md outline-none bg-zinc-900 text-zinc-300 text-base font-normal p-2 min-h-[20vh] custom-scrollbar min-w-[25rem]"
+            class="rounded-md outline-none bg-zinc-50 text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300 text-base font-normal p-2 min-h-[20vh] custom-scrollbar min-w-[75vw] sm:min-w-[25rem]"
           ></textarea>
         </DDialog>
       </DAppButton>
