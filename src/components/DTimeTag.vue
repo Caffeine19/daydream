@@ -27,7 +27,7 @@ defineEmits<{ select: [id: number] }>()
     class="relative flex items-center justify-self-start md:justify-self-end col-span-6 col-end-6 md:col-end-4 md:col-span-3 lg:col-end-6 lg:col-span-2"
   >
     <button
-      class="rounded-md px-2 py-1 flex w-fit space-x-1 items-center"
+      class="rounded-md px-2 py-1 flex w-fit space-x-1 items-center transition-colors"
       :class="
         TagColorOption[color].backgroundColor.transparent + ' ' + TagColorOption[color].textColor
       "

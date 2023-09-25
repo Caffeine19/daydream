@@ -36,7 +36,7 @@ const toggleShowEditMenu = () => {
           ' ' +
           TagColorOption[timeTag.color].textColor
         "
-        class="rounded-md px-2 py-1 whitespace-nowrap"
+        class="rounded-md px-2 py-1 whitespace-nowrap transition-colors"
         @click="
           () => {
             $emit('select', timeTag.id)

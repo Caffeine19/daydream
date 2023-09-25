@@ -32,14 +32,15 @@ const onSubmit = () => {
       </div>
 
       <div class="grid gap-2 grid-cols-4 place-items-center">
-        <div
-          v-for="(c, index) in TagColorOption"
-          :key="index"
-          :class="c.backgroundColor.transparent"
+        <button
+          v-for="(cv, ck) in TagColorOption"
+          :key="ck"
+          @click="() => timeTagStore.updateTimeTagColor(timeTag.id, ck)"
+          :class="cv.backgroundColor.transparent"
           class="w-8 h-8 rounded-full flex items-center justify-center"
         >
-          <div class="w-4 h-4 rounded-full" :class="c.backgroundColor.solid"></div>
-        </div>
+          <div class="w-4 h-4 rounded-full" :class="cv.backgroundColor.solid"></div>
+        </button>
       </div></div
   ></Transition>
 </template>

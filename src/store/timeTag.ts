@@ -23,7 +23,10 @@ export const useTimeTagStore = defineStore('timeTag', () => {
     timeTagList.value = timeTagList.value.filter((t) => t.id !== id)
   }
 
-  const updateTimeTagColor = () => {}
+  const updateTimeTagColor = (id: TimeTag['id'], newVal: TimeTag['color']) => {
+    const index = timeTagList.value.findIndex((t) => t.id === id)
+    timeTagList.value[index].color = newVal
+  }
 
   const updateTimeTagName = (id: TimeTag['id'], newVal: TimeTag['name']) => {
     const index = timeTagList.value.findIndex((t) => t.id === id)
