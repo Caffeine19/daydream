@@ -79,6 +79,22 @@ export const TagColorOption = {
     },
     textColor: ' text-violet-500 dark:text-violet-300',
     borderColor: 'border-violet-500 dark:border-violet-300 '
+  },
+  emerald: {
+    backgroundColor: {
+      transparent: 'bg-emerald-500/10 dark:bg-emerald-300/10',
+      solid: 'bg-emerald-500 dark:bg-emerald-300'
+    },
+    textColor: ' text-emerald-500 dark:text-emerald-300',
+    borderColor: 'border-emerald-500 dark:border-emerald-300 '
+  },
+  teal: {
+    backgroundColor: {
+      transparent: 'bg-teal-500/10 dark:bg-teal-300/10',
+      solid: 'bg-teal-500 dark:bg-teal-300'
+    },
+    textColor: ' text-teal-500 dark:text-teal-300',
+    borderColor: 'border-teal-500 dark:border-teal-300 '
   }
 }
 
