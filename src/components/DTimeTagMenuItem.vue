@@ -14,12 +14,9 @@ defineProps<{ timeTag: TimeTag }>()
 const timeTagStore = useTimeTagStore()
 
 const showEditMenu = ref(false)
-const toggleShowEditMenu = () => {
-  showEditMenu.value = !showEditMenu.value
-}
 </script>
 <template>
-  <li class="flex group justify-between items-center space-x-1">
+  <li class="flex group justify-between items-center space-x-1 relative">
     <div class="flex items-center space-x-1">
       <button
         @click="() => timeTagStore.deleteTimeTag(timeTag.id)"
@@ -48,14 +45,14 @@ const toggleShowEditMenu = () => {
     </div>
 
     <button
-      class="rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors bg-transparent p-1.5 relative"
+      class="rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors bg-transparent p-1.5"
       @click="showEditMenu = true"
     >
       <EllipsisHorizontalIcon
         class="w-5 h-5 text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-600 dark:group-hover:text-zinc-400"
       >
       </EllipsisHorizontalIcon>
-      <DTimeTagEditMenu :showEditMenu="showEditMenu" :timeTag="timeTag"></DTimeTagEditMenu>
     </button>
+    <DTimeTagEditMenu v-model:showEditMenu="showEditMenu" :timeTag="timeTag"></DTimeTagEditMenu>
   </li>
 </template>

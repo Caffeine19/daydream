@@ -47,6 +47,38 @@ export const TagColorOption = {
     },
     textColor: ' text-yellow-500 dark:text-yellow-300',
     borderColor: 'border-yellow-500 dark:border-yellow-300 '
+  },
+  rose: {
+    backgroundColor: {
+      transparent: 'bg-rose-500/10 dark:bg-rose-300/10',
+      solid: 'bg-rose-500 dark:bg-rose-300'
+    },
+    textColor: ' text-rose-500 dark:text-rose-300',
+    borderColor: 'border-rose-500 dark:border-rose-300 '
+  },
+  red: {
+    backgroundColor: {
+      transparent: 'bg-red-500/10 dark:bg-red-300/10',
+      solid: 'bg-red-500 dark:bg-red-300'
+    },
+    textColor: ' text-red-500 dark:text-red-300',
+    borderColor: 'border-red-500 dark:border-red-300 '
+  },
+  cyan: {
+    backgroundColor: {
+      transparent: 'bg-cyan-500/10 dark:bg-cyan-300/10',
+      solid: 'bg-cyan-500 dark:bg-cyan-300'
+    },
+    textColor: ' text-cyan-500 dark:text-cyan-300',
+    borderColor: 'border-cyan-500 dark:border-cyan-300 '
+  },
+  violet: {
+    backgroundColor: {
+      transparent: 'bg-violet-500/10 dark:bg-violet-300/10',
+      solid: 'bg-violet-500 dark:bg-violet-300'
+    },
+    textColor: ' text-violet-500 dark:text-violet-300',
+    borderColor: 'border-violet-500 dark:border-violet-300 '
   }
 }
 
