@@ -4,6 +4,8 @@ import { computed, ref } from 'vue'
 
 import { useStorage, type RemovableRef } from '@vueuse/core'
 
+import { v4 as uuidv4 } from 'uuid'
+
 import { useTimeTagStore } from './timeTag'
 
 import { mockIncomeList } from './mockData'
@@ -11,7 +13,7 @@ import { mockIncomeList } from './mockData'
 import type { TimeTag } from '@/types/timeTag'
 
 export interface Income {
-  id: number
+  id: string
   name: string
   value: number
   num: number
@@ -32,23 +34,23 @@ export const useIncomeStore = defineStore('income', () => {
     return newVal
   })
 
-  const updateIncomeItemValue = (id: number, newVal: number) => {
+  const updateIncomeItemValue = (id: Income['id'], newVal: number) => {
     console.log('🚀 ~ file: Income.ts:61 ~ updateIncomeItemValue ~ newVal:', newVal)
     const index = incomeList.value.findIndex((d) => d.id === id)
     incomeList.value[index].value = newVal
   }
 
-  const updateIncomeItemNum = (id: number, newVal: number) => {
+  const updateIncomeItemNum = (id: Income['id'], newVal: number) => {
     const index = incomeList.value.findIndex((d) => d.id === id)
     incomeList.value[index].num = newVal
   }
 
-  const updateIncomeItemName = (id: number, newVal: string) => {
+  const updateIncomeItemName = (id: Income['id'], newVal: string) => {
     const index = incomeList.value.findIndex((d) => d.id === id)
     incomeList.value[index].name = newVal
   }
 
-  const updateIncomeItemTimeTag = (id: number, newVal: number) => {
+  const updateIncomeItemTimeTag = (id: Income['id'], newVal: TimeTag['id']) => {
     const index = incomeList.value.findIndex((d) => d.id === id)
     incomeList.value[index].timeTagId = newVal
   }
@@ -64,11 +66,11 @@ export const useIncomeStore = defineStore('income', () => {
     })
   }
 
-  const deleteIncomeItem = (id: number) => {
+  const deleteIncomeItem = (id: Income['id']) => {
     incomeList.value = incomeList.value.filter((d) => d.id !== id)
   }
 
-  const createIncomeItem = (prevId: number) => {
+  const createIncomeItem = (prevId: Income['id']) => {
     const index = incomeList.value.findIndex((d) => d.id === prevId)
 
     const blankItem: Income = {
@@ -76,7 +78,7 @@ export const useIncomeStore = defineStore('income', () => {
       value: 0,
       num: 1,
       timeTagId: incomeList.value[index - 1].timeTagId,
-      id: Math.floor(Math.random() * 1000)
+      id: uuidv4()
     }
     incomeList.value.splice(index, 0, blankItem)
     highlightIncomeItem(blankItem.id)
@@ -86,7 +88,7 @@ export const useIncomeStore = defineStore('income', () => {
     const index = incomeList.value.findIndex((d) => d.id === targeId)
     const { id, ...rest } = incomeList.value[index]
     const generatedIncomeItem = {
-      id: Math.floor(Math.random() * 1000),
+      id: uuidv4(),
       ...rest
     }
     incomeList.value.splice(index, 0, generatedIncomeItem)

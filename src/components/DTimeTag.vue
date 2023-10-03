@@ -19,7 +19,7 @@ const toggleTimeTag = () => {
 const target = ref(null)
 onClickOutside(target, () => (showTimeTagMenu.value = false))
 
-defineEmits<{ select: [id: number] }>()
+defineEmits<{ select: [id: TimeTag['id']] }>()
 </script>
 <template>
   <div

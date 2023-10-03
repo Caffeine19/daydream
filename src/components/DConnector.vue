@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline'
 
-import { useIncomeStore } from '@/store/income'
+import { useIncomeStore, type Income } from '@/store/income'
 
-defineProps<{ prevId: number }>()
+defineProps<{ prevId: Income['id'] }>()
 
 const incomeStore = useIncomeStore()
 </script>

@@ -10,8 +10,10 @@ import DTimeTagMenuItem from './DTimeTagMenuItem.vue'
 
 import { useTimeTagStore } from '@/store/timeTag'
 
+import type { TimeTag } from '@/types/timeTag'
+
 defineProps<{ showTimeTagMenu: boolean }>()
-defineEmits<{ select: [id: number] }>()
+defineEmits<{ select: [id: TimeTag['id']] }>()
 
 const newTimeTagName = ref<string>()
 

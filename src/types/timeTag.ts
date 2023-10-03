@@ -99,7 +99,7 @@ export const TagColorOption = {
 }
 
 export interface TimeTag {
-  id: number
+  id: string
   name: string
   color: keyof typeof TagColorOption
 }

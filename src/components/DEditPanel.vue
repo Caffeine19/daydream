@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { XMarkIcon, Bars2Icon } from '@heroicons/vue/24/outline'
 
-import { useIncomeStore } from '@/store/income'
+import { useIncomeStore, type Income } from '@/store/income'
 
 import DEditButtonGroup from './DEditButtonGroup.vue'
 import DInput from './DInput.vue'
 
-defineProps<{ name: string; value: number; id: number; num: number }>()
+defineProps<Omit<Income, 'timeTagId'>>()
 
 const incomeStore = useIncomeStore()
 </script>

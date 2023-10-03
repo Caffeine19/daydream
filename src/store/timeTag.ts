@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 
 import { useStorage, type RemovableRef } from '@vueuse/core'
 
+import { v4 as uuidv4 } from 'uuid'
+
 import { mockTimeTagList } from './mockData'
 
 import { type TimeTag } from '@/types/timeTag'
@@ -11,7 +13,7 @@ export const useTimeTagStore = defineStore('timeTag', () => {
 
   const createTimeTag = (name: TimeTag['name']) => {
     const blankTimeTag: TimeTag = {
-      id: Math.floor(Math.random() * 1000),
+      id: uuidv4(),
       name,
       color: 'zinc'
     }

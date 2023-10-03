@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@heroicons/vue':
     specifier: ^2.0.18
@@ -23,6 +19,9 @@ dependencies:
   sortablejs:
     specifier: ^1.15.0
     version: 1.15.0
+  uuid:
+    specifier: ^9.0.1
+    version: 9.0.1
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -43,6 +42,9 @@ devDependencies:
   '@types/node':
     specifier: ^18.17.17
     version: 18.17.17
+  '@types/uuid':
+    specifier: ^9.0.4
+    version: 9.0.4
   '@vitejs/plugin-vue':
     specifier: ^4.3.4
     version: 4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -536,6 +538,10 @@ packages:
 
   /@types/tough-cookie@4.0.3:
     resolution: {integrity: sha512-THo502dA5PzG/sfQH+42Lw3fvmYkceefOspdCwpHRul8ik2Jv1K8I5OZz1AT3/rs46kwgMCe9bSBmDLYkkOMGg==}
+    dev: true
+
+  /@types/uuid@9.0.4:
+    resolution: {integrity: sha512-zAuJWQflfx6dYJM62vna+Sn5aeSWhh3OB+wfUEACNcqUSc0AGc5JKl+ycL1vrH7frGTXhJchYjE1Hak8L819dA==}
     dev: true
 
   /@types/web-bluetooth@0.0.17:
@@ -3079,6 +3085,11 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+    dev: false
+
   /validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
     dependencies:
@@ -3377,3 +3388,7 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
